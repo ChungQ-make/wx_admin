@@ -1,0 +1,41 @@
+/* 全局样式表文件 */
+
+html,body,#app{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+
+.el-breadcrumb {
+    margin-bottom: 15px;
+    font-size: 12px;
+
+}
+
+.el-card {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+}
+
+.el-table{
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.el-pagination{
+    margin-top: 15px;
+}
+/* 解决级联选择器显示溢出的问题*/
+.el-cascader-menu {
+    height: 300px;
+}
+
+.el-steps{
+    margin: 15px 0;
+}
+.el-step__title{
+    font-size: 13px;
+}
+.ql-editor{
+    min-height: 300px;
+}
