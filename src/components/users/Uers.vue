@@ -17,6 +17,7 @@
             v-model="queryInfo.query"
             clearable
             @clear="getUserList"
+             @keyup.enter.native="getUserList"
           >
             <el-button
               icon="el-icon-search"
@@ -25,15 +26,15 @@
             ></el-button>
           </el-input>
         </el-col>
-        <el-col :span="4">
-          <el-button type="primary" v-on:click="addDialogVisable = true"
-            >添加用户</el-button
-          >
-        </el-col>
       </el-row>
       <!--用户列表区-->
       <el-table :data="userList" stripe border>
         <el-table-column type="index" label="#"></el-table-column>
+        <el-table-column label="" align="center" width="75">
+          <template slot-scope="scope">
+            <div class="block"><el-avatar :size="50" :src="scope.row.avatarUrl"></el-avatar></div>
+          </template>
+        </el-table-column>
         <el-table-column
           prop="nickName"
           label="用户名"
@@ -57,7 +58,7 @@
               >正常状态</el-tag
             >
             <el-tag v-else-if="scope.row.status === 1" type="danger">禁止售卖</el-tag>
-            <el-tag  v-else type="warning">禁止登陆</el-tag>
+            <el-tag  v-else type="warning">禁止登录</el-tag>
           </template>
         </el-table-column>
         <el-table-column label="操作" width="180px">
@@ -66,7 +67,7 @@
               type="primary"
               icon="el-icon-edit"
               size="mini"
-              @click="showEditDialog(scope.row.openid)"
+              @click="showEditDialog(scope.row)"
             ></el-button>
             <el-button
               type="danger"
@@ -179,10 +180,10 @@
           <el-tooltip
             class="item"
             effect="dark"
-            content="用户禁止登陆"
+            content="用户禁止登录"
             placement="top"
           >
-            <el-radio :label="2">禁止登陆</el-radio>
+            <el-radio :label="2">禁止登录</el-radio>
           </el-tooltip>
         </el-radio-group>
       </el-card>
@@ -256,13 +257,14 @@ export default {
       this.getUserList()
     },
     // 展示编辑用户的对话框
-    async showEditDialog (openid) {
-      const { data: res } = await this.$http.post('users/userInfo', { openid })
-      //   console.log(res)
-      if (res.meta.status !== 200) {
-        return this.$message.error('获取用户信息失败！')
-      }
-      this.editForm = res.data
+    async showEditDialog (userInfo) {
+    //   const { data: res } = await this.$http.post('users/userInfo', { openid })
+    //   //   console.log(res)
+    //   if (res.meta.status !== 200) {
+    //     return this.$message.error('获取用户信息失败！')
+    //   }
+    //   this.editForm = res.data
+      this.editForm = userInfo
       this.editDialogVisible = true
     },
     //  清除修改表单的对话框(目的是重置修改表单的验证结果)
@@ -288,6 +290,7 @@ export default {
         this.editDialogVisible = false
         // 刷新数据列表
         this.getUserList()
+        this.$refs.editFromRef.resetFields()
         this.$message.success('更新用户信息成功！')
       })
     },

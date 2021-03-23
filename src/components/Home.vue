@@ -41,11 +41,11 @@
             </template>
             <el-menu-item-group>
               <!-- <template slot="title">分组一</template> -->
-              <el-menu-item index="2-1">
-                <i class="el-icon-menu"></i>选项1</el-menu-item
+              <el-menu-item index="/audit" @click="saveNavState('/audit')">
+                <i class="el-icon-menu"></i>商品审核</el-menu-item
               >
-              <el-menu-item index="2 -2">
-                <i class="el-icon-menu"></i>选项2</el-menu-item
+              <el-menu-item index="/goods" @click="saveNavState('/goods')">
+                <i class="el-icon-menu"></i>商品列表</el-menu-item
               >
             </el-menu-item-group>
           </el-submenu>
@@ -56,12 +56,12 @@
             </template>
             <el-menu-item-group>
               <!-- <template slot="title">分组一</template> -->
-              <el-menu-item index="3-1">
-                <i class="el-icon-menu"></i>选项1</el-menu-item
+              <el-menu-item index="/orders" @click="saveNavState('/orders')">
+                <i class="el-icon-menu"></i>订单列表</el-menu-item
               >
-              <el-menu-item index="3-2">
+              <!-- <el-menu-item index="3-2">
                 <i class="el-icon-menu"></i>选项2</el-menu-item
-              >
+              > -->
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="4">
@@ -71,12 +71,12 @@
             </template>
             <el-menu-item-group>
               <!-- <template slot="title">分组一</template> -->
-              <el-menu-item index="4-1">
-                <i class="el-icon-menu"></i>选项1</el-menu-item
+              <el-menu-item index="/sorts" @click="saveNavState('/sorts')">
+                <i class="el-icon-menu"></i>分类列表</el-menu-item
               >
-              <el-menu-item index="4-2">
+              <!-- <el-menu-item index="4-2">
                 <i class="el-icon-menu"></i>选项2</el-menu-item
-              >
+              > -->
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="5">

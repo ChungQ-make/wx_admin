@@ -4,6 +4,10 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
 import Users from '../components/users/Uers.vue'
+import Audit from '../components/goods/Audit.vue'
+import Goods from '../components/goods/Goods.vue'
+import Orders from '../components/orders/Orders.vue'
+import Sorts from '../components/sorts/Sorts.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,6 +29,22 @@ const routes = [
       {
         path: '/users',
         component: Users
+      },
+      {
+        path: '/audit',
+        component: Audit
+      },
+      {
+        path: '/orders',
+        component: Orders
+      },
+      {
+        path: '/sorts',
+        component: Sorts
+      },
+      {
+        path: '/goods',
+        component: Goods
       }
     ]
   }

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import {
-  Button, Form, FormItem, Input, Message, Container, Header, Aside, Main,
+  Button, Form, FormItem, Input, Message, Container, Header, Aside, Main, Avatar,
   Menu, Submenu, MenuItemGroup, MenuItem, BreadcrumbItem, Breadcrumb, Card, Col, Row, Table, TableColumn, Switch, Tooltip, Pagination,
-  Dialog, MessageBox, Tag, Notification, Tree, Option, Select, Cascader, TabPane, Alert, Tabs, Step, Steps
-  , Checkbox, CheckboxGroup, Upload, Image, Timeline, TimelineItem, Radio, RadioGroup, InputNumber
+  Dialog, MessageBox, Tag, Notification, Tree, Option, Select, Cascader, TabPane, Alert, Tabs, Step, Steps, Drawer
+  , Checkbox, CheckboxGroup, Upload, Image, Timeline, TimelineItem, Radio, RadioGroup, InputNumber, Carousel, CarouselItem
 } from 'element-ui'
 
 Vue.use(Button)
@@ -48,6 +48,10 @@ Vue.use(Timeline)
 Vue.use(Radio)
 Vue.use(RadioGroup)
 Vue.use(InputNumber)
+Vue.use(CarouselItem)
+Vue.use(Carousel)
+Vue.use(Drawer)
+Vue.use(Avatar)
 // 消息提示弹框需要挂载到原型对象上（$message是自定义属性 可变）
 Vue.prototype.$message = Message
 
