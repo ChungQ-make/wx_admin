@@ -9,7 +9,7 @@
     <el-card class="box-card">
       <el-col :span="8">
         <el-input
-          placeholder="输入商品编号、商家名称或商品名称查找"
+          placeholder="输入订单编号、商品名称或买家名称查找"
           class="input-with-select"
           v-model="queryInfo.query"
           clearable
@@ -133,7 +133,7 @@
       title="订单修改"
       :visible.sync="editDialogVisable"
       width="50%"
-      @close="clearEditGoodFrom"
+      @close="clearEditFrom"
     >
       <el-card class="box-card">
         <el-form
@@ -162,7 +162,7 @@
       </el-card>
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisable = false">取 消</el-button>
-        <el-button type="primary" @click="saveEditGoodInfo">确 定</el-button>
+        <el-button type="primary" @click="saveEditOrderInfo">确 定</el-button>
       </span>
     </el-dialog>
         <!-- 状态更改 -->
@@ -279,12 +279,12 @@ export default {
       this.editOrderInfo = orderInfo
       this.editDialogVisable = true
     },
-    clearEditGoodFrom () {
+    clearEditFrom () {
     //   this.$refs.editOrderFromRef.resetFields()
       this.editOrderInfo = {}
     },
     // 保存修改数据
-    async saveEditGoodInfo () {
+    async saveEditOrderInfo () {
       // 进行预验证
       this.$refs.editOrderFromRef.validate(async (vaild) => {
         if (!vaild) return this.$message.error('修改订单信息失败！')
