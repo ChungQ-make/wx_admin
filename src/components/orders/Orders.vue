@@ -276,11 +276,13 @@ export default {
       this.getOrderList()
     },
     showEditDialog (orderInfo) {
-      this.editOrderInfo = orderInfo
+      // 这里借助JSON做一次对象深复制 也可以借助lodash 或者其他方法
+      const newObj = JSON.parse(JSON.stringify(orderInfo))
+      this.editOrderInfo = newObj
       this.editDialogVisable = true
     },
     clearEditFrom () {
-    //   this.$refs.editOrderFromRef.resetFields()
+      this.$refs.editOrderFromRef.resetFields()
       this.editOrderInfo = {}
     },
     // 保存修改数据

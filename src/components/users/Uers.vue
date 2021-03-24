@@ -264,7 +264,9 @@ export default {
     //     return this.$message.error('获取用户信息失败！')
     //   }
     //   this.editForm = res.data
-      this.editForm = userInfo
+      // 这里借助JSON做一次对象深复制 也可以借助lodash 或者其他方法
+      const newObj = JSON.parse(JSON.stringify(userInfo))
+      this.editForm = newObj
       this.editDialogVisible = true
     },
     //  清除修改表单的对话框(目的是重置修改表单的验证结果)

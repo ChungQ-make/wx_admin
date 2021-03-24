@@ -8,6 +8,7 @@ import Audit from '../components/goods/Audit.vue'
 import Goods from '../components/goods/Goods.vue'
 import Orders from '../components/orders/Orders.vue'
 import Sorts from '../components/sorts/Sorts.vue'
+import SwiperView from '../components/indexDiy/SwiperView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -45,6 +46,10 @@ const routes = [
       {
         path: '/goods',
         component: Goods
+      },
+      {
+        path: '/swiper',
+        component: SwiperView
       }
     ]
   }

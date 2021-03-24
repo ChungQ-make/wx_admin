@@ -82,15 +82,11 @@
           <el-submenu index="5">
             <template slot="title">
               <i class="el-icon-s-shop"></i>
-              <span>首页管理</span>
+              <span>布局管理</span>
             </template>
             <el-menu-item-group>
-              <!-- <template slot="title">分组一</template> -->
-              <el-menu-item index="5-1">
-                <i class="el-icon-menu"></i>选项1</el-menu-item
-              >
-              <el-menu-item index="5-2">
-                <i class="el-icon-menu"></i>选项2</el-menu-item
+              <el-menu-item index="/swiper" @click="saveNavState('/swiper')">
+                <i class="el-icon-menu"></i>轮播图</el-menu-item
               >
             </el-menu-item-group>
           </el-submenu>
@@ -100,9 +96,8 @@
               <span>账户管理</span>
             </template>
             <el-menu-item-group>
-              <!-- <template slot="title">分组一</template> -->
               <el-menu-item index="6-1">
-                <i class="el-icon-menu"></i>选项1</el-menu-item
+                <i class="el-icon-menu"></i>账号列表</el-menu-item
               >
               <el-menu-item index="6-2">
                 <i class="el-icon-menu"></i>选项2</el-menu-item

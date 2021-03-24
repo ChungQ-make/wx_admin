@@ -248,7 +248,8 @@ export default {
       this.getCategoryData()
     },
     showEditDialog (sortInfo) {
-      this.editSortInfo = sortInfo
+      const newObj = JSON.parse(JSON.stringify(sortInfo))
+      this.editSortInfo = newObj
       this.editDialogVisable = true
     },
     clearEditFrom () {

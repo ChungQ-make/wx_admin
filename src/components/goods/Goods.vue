@@ -323,11 +323,13 @@ export default {
     //     return this.$message.error('获取商品信息失败！')
     //   }
     //   this.editGoodsInfo = res.data
-      this.editGoodsInfo = goodsInfo
+      // 这里借助JSON做一次对象深复制 也可以借助lodash 或者其他方法
+      const newObj = JSON.parse(JSON.stringify(goodsInfo))
+      this.editGoodsInfo = newObj
       this.editDialogVisable = true
     },
     clearEditGoodFrom () {
-    //   this.$refs.editGoodFromRef.resetFields()
+      this.$refs.editGoodFromRef.resetFields()
       this.editGoodsInfo = {}
     },
     // 保存修改信息
