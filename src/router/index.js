@@ -9,6 +9,7 @@ import Goods from '../components/goods/Goods.vue'
 import Orders from '../components/orders/Orders.vue'
 import Sorts from '../components/sorts/Sorts.vue'
 import SwiperView from '../components/indexDiy/SwiperView.vue'
+import Admin from '../components/admin/Admin.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -50,6 +51,10 @@ const routes = [
       {
         path: '/swiper',
         component: SwiperView
+      },
+      {
+        path: '/admin',
+        component: Admin
       }
     ]
   }

@@ -174,7 +174,7 @@
       ></el-image>
       <span slot="footer" class="dialog-footer">
         <el-button @click="addDialogVisable = false">取 消</el-button>
-        <el-button type="primary" @click="saveAddSwiperForm">确 定</el-button>
+        <el-button type="primary" @click="saveAddSwiperForm" :disabled="!addFrom.goods_name">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -233,7 +233,7 @@ export default {
     clearEditFrom () {
       this.$refs.editFromRef.resetFields()
       this.editSwiperInfo = {}
-      this.editDialogVisable = false
+    //   this.editDialogVisable = false
     },
     // showEditDialog(scope.$index,scope.row) 为固定顺序参数 同时传递两个参数（行索引，行数据）
     showEditDialog (index, swieprItem) {
@@ -303,7 +303,7 @@ export default {
         const { data: res } = await this.$http.post('/home/swiper/add', {
           newItem: addFrom
         })
-        if (res.meta.status !== 200) {
+        if (res.meta.status !== 201) {
           return this.$notify.error('添加失败！')
         }
         // 关闭对话框
@@ -322,6 +322,7 @@ export default {
           `/goods/detail?goods_id=${this.addFrom.goods_id}`
         )
         if (res.meta.status !== 200) {
+          this.$refs.addFromRef.resetFields()
           return this.$message.error('该商品不存在！')
         }
         const { goods_name: goodsName } = res.data

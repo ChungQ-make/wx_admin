@@ -96,11 +96,8 @@
               <span>账户管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="6-1">
+              <el-menu-item index="/admin" @click="saveNavState('/admin')">
                 <i class="el-icon-menu"></i>账号列表</el-menu-item
-              >
-              <el-menu-item index="6-2">
-                <i class="el-icon-menu"></i>选项2</el-menu-item
               >
             </el-menu-item-group>
           </el-submenu>
