@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Users from '../components/users/Uers.vue'
-import Audit from '../components/goods/Audit.vue'
-import Goods from '../components/goods/Goods.vue'
-import Orders from '../components/orders/Orders.vue'
-import Sorts from '../components/sorts/Sorts.vue'
-import SwiperView from '../components/indexDiy/SwiperView.vue'
-import Admin from '../components/admin/Admin.vue'
+
+const Login = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Login.vue')
+const Home = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Home.vue')
+const Welcome = () => import(/* webpackChunkName: "login_home_welcome" */ '../components/Welcome.vue')
+const Users = () => import(/* webpackChunkName: "users" */ '../components/users/Uers.vue')
+const Audit = () => import(/* webpackChunkName: "audit_goods" */ '../components/goods/Audit.vue')
+const Goods = () => import(/* webpackChunkName: "audit_goods" */ '../components/goods/Goods.vue')
+const Orders = () => import(/* webpackChunkName: "orders" */ '../components/orders/Orders.vue')
+const Sorts = () => import(/* webpackChunkName: "sorts" */ '../components/sorts/Sorts.vue')
+const SwiperView = () => import(/* webpackChunkName: "swiper" */ '../components/indexDiy/SwiperView.vue')
+const Admin = () => import(/* webpackChunkName: "admin" */ '../components/admin/Admin.vue')
+
 Vue.use(VueRouter)
 
 const routes = [

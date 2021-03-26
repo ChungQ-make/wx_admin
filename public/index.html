@@ -5,7 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title><%= htmlWebpackPlugin.options.isProd ? '' : 'dev - ' %>微信二手交易平台后台管理系统</title>
+
+    <% if(htmlWebpackPlugin.options.isProd){ %>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.14.1/theme-chalk/index.min.css">
+
+    <script src="https://cdn.staticfile.org/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/vue-router/3.4.9/vue-router.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="https://cdn.staticfile.org/element-ui/2.14.1/index.min.js"></script>
+    <% } %>
   </head>
   <body>
     <noscript>
