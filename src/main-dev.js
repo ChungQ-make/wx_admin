@@ -11,7 +11,11 @@ import 'nprogress/nprogress.css'
 // 将axios挂载到vue原型对象上（全局调用）
 Vue.prototype.$http = axios
 // 配置请求根路径
-// axios.defaults.baseURL = 'https://www.yycloud.ltd/api'
+
+// * 使用nginx反向代理后的api基址
+// axios.defaults.baseURL = 'https://www.yycloud.ltd/api1'
+// axios.defaults.baseURL = 'https://www.yycloud.ltd/api/api/private/v1'
+// * 本地测试基址
 axios.defaults.baseURL = 'http://localhost:5000/api/private/v1'
 
 // 在 request 拦截器中 展示进度条 NProgress.start()

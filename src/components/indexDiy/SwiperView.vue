@@ -335,6 +335,9 @@ export default {
       //   window.location.href = 'http://localhost:5000/api/private/v1/home/uploadHome''
 
       // 新窗口打开图床页面
+      //   * 线上上传地址
+      //   window.open('https://www.yycloud.ltd/api1/home/uploadHome')
+      //   * 本地上传测试地址
       window.open('http://localhost:5000/api/private/v1/home/uploadHome')
     }
   },
